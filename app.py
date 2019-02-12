@@ -164,8 +164,7 @@ def upload_file():
             return redirect(request.url)
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('upload_file',
-                                filename=filename))
+        return redirect(url_for('upload_file'))
     return '''
     <!doctype html>
     <title>Upload new File</title>
