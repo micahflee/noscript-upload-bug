@@ -112,7 +112,8 @@ class CustomRequest(Request):
             return
         self.closed = True
 
-        print('Upload finished')
+        if self.upload_request:
+            print('Upload finished')
 
     def file_write_func(self, filename, length):
         """
