@@ -32,7 +32,7 @@ class CustomTemporaryFile(object):
         self.onionshare_close_func = close_func
 
         # Create a temporary file
-        self.f = tempfile.TemporaryFile('wb+')
+        self.f = tempfile.NamedTemporaryFile('wb+')
         print('Writing to temporary file: {}'.format(self.f.name))
 
         # Make all the file-like methods and attributes actually access the
